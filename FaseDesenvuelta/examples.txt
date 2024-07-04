@@ -1,0 +1,32 @@
+Frecuencia de Corte (𝑓𝑐)
+Atenuación en la Banda Pasante (rp)
+Atenuación en la Banda de Parada (rs)
+
+{
+    "tipo_filtro": "Butterworth",
+    "orden": 8,
+    "fc": 0.35
+}
+
+
+{
+    "tipo_filtro": "Chebyshev Tipo I",
+    "orden": 8,
+    "fc": 0.35,
+    "rp": 1
+}
+
+{
+    "tipo_filtro": "Chebyshev Tipo II",
+    "orden": 8,
+    "fc": 0.35,
+    "rs": 40
+}
+
+{
+    "tipo_filtro": "Elíptico",
+    "orden": 8,
+    "fc": 0.35,
+    "rp": 1,
+    "rs": 40
+}

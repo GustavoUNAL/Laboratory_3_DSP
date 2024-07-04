@@ -1,0 +1,5 @@
+{
+    "tipo_filtro": "Butterworth",
+    "orden": 8,
+    "fc": 0.35
+}
