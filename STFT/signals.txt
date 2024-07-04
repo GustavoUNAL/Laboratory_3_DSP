@@ -1,0 +1,60 @@
+import json
+import numpy as np
+
+# Definir la función para generar la señal con diferentes frecuencias
+def generate_signal_example():
+    fs = 400  # frecuencia de muestreo
+    t = np.linspace(0, 20, 20 * fs, endpoint=False)
+    signal = np.piecewise(t, [t < 5, (t >= 5) & (t < 10), (t >= 10) & (t < 15), t >= 15],
+                          [lambda t: np.cos(2 * np.pi * 5 * t),
+                           lambda t: np.cos(2 * np.pi * 20 * t),
+                           lambda t: np.cos(2 * np.pi * 40 * t),
+                           lambda t: np.cos(2 * np.pi * 80 * t)])
+    return signal.tolist()
+
+# Generar las señales de ejemplo
+signal1 = generate_signal_example()
+signal2 = generate_signal_example()  # Se puede generar otra señal diferente si se desea
+signal3 = generate_signal_example()  # Otra señal diferente
+
+# Crear el diccionario con las señales
+signals = {
+    "signal1": signal1,
+    "signal2": signal2,
+    "signal3": signal3
+}
+
+# Guardar las señales en un archivo JSON
+with open('signals_example.json', 'w') as f:
+    json.dump(signals, f)
+
+
+************+
+
+import json
+import numpy as np
+
+# Definir la función para generar la señal con diferentes frecuencias
+def generate_signal():
+    fs = 400  # frecuencia de muestreo
+    t = np.linspace(0, 20, 20 * fs, endpoint=False)
+    signal = np.piecewise(t, [t < 5, (t >= 5) & (t < 10), (t >= 10) & (t < 15), t >= 15],
+                          [lambda t: np.cos(2 * np.pi * 10 * t),
+                           lambda t: np.cos(2 * np.pi * 25 * t),
+                           lambda t: np.cos(2 * np.pi * 50 * t),
+                           lambda t: np.cos(2 * np.pi * 100 * t)])
+    return signal.tolist()
+
+# Generar las señales
+signal1 = generate_signal()
+signal2 = generate_signal()  # Se puede generar otra señal diferente si se desea
+
+# Crear el diccionario con las señales
+signals = {
+    "signal1": signal1,
+    "signal2": signal2
+}
+
+# Guardar las señales en un archivo JSON
+with open('signals.json', 'w') as f:
+    json.dump(signals, f)
