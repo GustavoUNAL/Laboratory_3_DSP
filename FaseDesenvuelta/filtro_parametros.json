@@ -1,5 +1,6 @@
 {
-    "tipo_filtro": "Butterworth",
+    "tipo_filtro": "Chebyshev Tipo I",
     "orden": 8,
-    "fc": 0.35
+    "fc": 0.35,
+    "rp": 1
 }
